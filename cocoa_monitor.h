@@ -1,0 +1,1 @@
+io_service_t IOServicePortFromCGDisplayID(CGDirectDisplayID displayID);

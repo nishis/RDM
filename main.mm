@@ -10,13 +10,10 @@
 int main(int argc, const char* argv[])
 {
 	int ret = -1;
-	if(argc > 1)
-	{
+	if (argc > 1) {
 		ret = cmdline_main(argc, argv);
 	}
-	
-	if(ret == -1)
-	{
+	if(ret == -1) {
 		fprintf(stderr, "Commandline options\n"
 						"  --width    (-w)  Width\n"
 						"  --height   (-h)  Height\n"
@@ -26,7 +23,7 @@ int main(int argc, const char* argv[])
 						"  --displays (-ld) List available displays\n"
 						"  --modes    (-lm) List available modes\n"
 						"\nCurrently running GUI.  Use ^C or close from menu\n");
-		
+
 		NSAutoreleasePool* pool = [NSAutoreleasePool new];
 		NSApplication* app = [NSApplication sharedApplication];
 
@@ -37,6 +34,6 @@ int main(int argc, const char* argv[])
 
 		[pool release];
 	}
-	
-	
+
+
 }

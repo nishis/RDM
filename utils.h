@@ -1,9 +1,7 @@
-
-
 typedef union
 {
 	uint8_t rawData[0xDC];
-	struct 
+	struct
 	{
 		uint32_t mode;
 		uint32_t flags;		// 0x4
@@ -27,9 +25,7 @@ extern "C"
 	void CGSConfigureDisplayMode(CGDisplayConfigRef config, CGDirectDisplayID display, int modeNum);
 	void CGSGetNumberOfDisplayModes(CGDirectDisplayID display, int* nModes);
 	void CGSGetDisplayModeDescriptionOfLength(CGDirectDisplayID display, int idx, modes_D4* mode, int length);
-};
-
+}
 
 void CopyAllDisplayModes(CGDirectDisplayID display, modes_D4** modes, int* cnt);
 void SetDisplayModeNum(CGDirectDisplayID display, int modeNum);
-

@@ -1,3 +1,12 @@
+# RDM
+
+## modified
+
+- Added "Open Displays Preferences..." action.
+- Added screenNameForDisplay method using IOServicePortFromCGDisplayID function from [GLFW](https://github.com/glfw/glfw/blob/8101d7a7b67fc3414769b25944dc7c02b58d53d0/src/cocoa_monitor.m)
+
+## original README.md
+
 This is a tool that lets you use MacBook Pro Retina's highest and unsupported resolutions.
 As an example, a Retina MacBook Pro 13" can be set to 3360×2100 maximum resolution, as
 opposed to Apple's max supported 1680×1050. It is accessible from the menu bar.
@@ -18,4 +27,3 @@ displayed. I don't know what is the license by its authors because it came 100%
 uncommented and undocumented. But I'm sure they would enjoy you to freely use it. Me too.
 
 Want installable binary package? [It is here](http://avi.alkalay.net/software/RDM/).
-

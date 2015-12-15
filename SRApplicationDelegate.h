@@ -1,6 +1,3 @@
-
-
-
 @interface SRApplicationDelegate : NSObject <NSApplicationDelegate, NSMenuDelegate>
 {
 	NSMenu* statusMenu;
@@ -8,4 +5,3 @@
 }
 
 @end
-

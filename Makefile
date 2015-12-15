@@ -9,6 +9,8 @@ CC=llvm-g++
 PACKAGE_BUILD=/usr/bin/pkgbuild
 ARCH_FLAGS=-arch x86_64
 
+WOPTION=-Wall -ansi -pedantic
+
 .PHONY: build
 
 RDM.app: SetResX Resources Info.plist monitor.icns
@@ -18,8 +20,8 @@ RDM.app: SetResX Resources Info.plist monitor.icns
 	mv monitor.icns RDM.app/Contents/Resources
 
 
-SetResX: main.o SRApplicationDelegate.o ResMenuItem.o cmdline.o utils.o 
-	$(CC) $^ -o $@ $(ARCH_FLAGS) -framework Foundation -framework ApplicationServices -framework AppKit 
+SetResX: main.o SRApplicationDelegate.o ResMenuItem.o cmdline.o utils.o cocoa_monitor.o
+	$(CC) $^ -o $@ $(ARCH_FLAGS) -framework Foundation -framework ApplicationServices -framework AppKit -framework IOKit
 
 
 clean:
@@ -31,7 +33,7 @@ clean:
 	rm -f *.pkg *.dmg
 
 %.o: %.mm
-	$(CC) $(CPPFLAGS) $(CFLAGS) $(ARCH_FLAGS) $< -c -o $@
+	$(CC) $(WOPTION) $(CPPFLAGS) $(CFLAGS) $(ARCH_FLAGS) $< -c -o $@
 
 
 %.icns: %.png
@@ -41,7 +43,7 @@ pkg: RDM.app
 	mkdir -p pkgroot/Applications
 	mv $< pkgroot/Applications/
 	$(PACKAGE_BUILD) --root pkgroot/  --identifier $(IDENTIFIER) \
-		--version $(VERSION) "RDM-$(VERSION).pkg" 
+		--version $(VERSION) "RDM-$(VERSION).pkg"
 	rm -f RDM.pkg
 	ln -s RDM-$(VERSION).pkg RDM.pkg
 
