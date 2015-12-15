@@ -11,15 +11,15 @@
 
 - (void) showAbout
 {
-	NSString* credits_str = @"This program is provided for free and without any warranty or support.  By using this software, you agree to not hold us liable for any loss or damage.";
-	NSAttributedString* credits = [[[NSAttributedString alloc] initWithString: credits_str] autorelease];
+	// NSString* credits_str = @"This program is provided for free and without any warranty or support.  By using this software, you agree to not hold us liable for any loss or damage.";
+	// NSAttributedString* credits = [[[NSAttributedString alloc] initWithString: credits_str] autorelease];
 	NSImage* icon = [NSImage imageNamed: @"Icon_512x512.png"];
 	NSDictionary* options = [NSDictionary dictionaryWithObjectsAndKeys:
-			credits, @"Credits",
+			// credits, @"Credits",
 			@"Retina DisplayMenu", @"ApplicationName",
 			@"Beta", @"Version",
 			icon, @"ApplicationIcon",
-			@"Retina DisplayMenu v0.2", @"ApplicationVersion",
+			@"Retina DisplayMenu v0.2.1", @"ApplicationVersion",
 			@"Copyright 2012, Paul Griffin.\nwww.phoenix-dev.com", @"Copyright",
 			nil];
 
@@ -199,7 +199,7 @@
 		[statusMenu addItem: [NSMenuItem separatorItem]];
 	}
 
-	[statusMenu addItemWithTitle: @"About RDM" action: @selector(showAbout) keyEquivalent: @""];
+	[statusMenu addItemWithTitle: @"About Retina DisplayMenu..." action: @selector(showAbout) keyEquivalent: @""];
 	[statusMenu addItemWithTitle: @"Open Displays Preferences..." action: @selector(openDisplayPreferences) keyEquivalent: @""];
 	[statusMenu addItem: [NSMenuItem separatorItem]];
 

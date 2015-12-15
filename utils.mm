@@ -1,10 +1,6 @@
-
 #import <Foundation/Foundation.h>
-
 #import <dlfcn.h>
-
 #import "utils.h"
-
 
 void CopyAllDisplayModes(CGDirectDisplayID display, modes_D4** modes, int* cnt)
 {
